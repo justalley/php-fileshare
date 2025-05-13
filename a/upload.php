@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"])) {
     $group_folder = $base_url . 'uploads/' . $username . '/' . $group_name;
 
     if (!is_dir($group_folder)) {
-        mkdir($group_folder);
+        mkdir($group_folder, 0775, true);
     }
     
     $destination = $group_folder . '/' . $file_name;
