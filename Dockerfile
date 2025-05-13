@@ -6,7 +6,8 @@ COPY . /var/www/html/
 
 WORKDIR /var/www/html/
 
-RUN chmod -R 775 /var/www/html/uploads \
+RUN mkdir -p /var/www/html/uploads \
+    && chmod -R 775 /var/www/html/uploads \
     && chown -R www-data:www-data /var/www/html/uploads
 
 EXPOSE 80
